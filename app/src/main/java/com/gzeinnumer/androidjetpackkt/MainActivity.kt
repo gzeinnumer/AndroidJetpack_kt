@@ -11,9 +11,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val posts = mutableListOf<PostItem>()
+
+        for (i in 1..24){
+            posts.add(PostItem("Zein Learn Jetpack "+i, " hari ini"))
+        }
+
         rv.apply {
             layoutManager = LinearLayoutManager(applicationContext)
-            adapter = MyAdapter()
+            adapter = MyAdapter(posts)
         }
     }
 }
